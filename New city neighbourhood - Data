@@ -1,0 +1,28 @@
+Two data sets will be used:
+a) Details of the venues in the user’s current neighborhood
+b) Details of the venues available in the neighborhoods in the target city
+
+For this project, we will assume that the user is looking to move from New York City, USA to Toronto, Canada. Both data sets will be generated with venue data obtained through Foursquare’s API.
+The Toronto data will be structured based on neighborhood definitions scraped from a Wikipedia website on Toronto’s postal codes (https://en.wikipedia.org/wiki/List_of_postal_codes_of_Canada:_M). The New York data will be taken from a json file with New York neighborhood data. This file was made available as part of an assignment for the IBM “Applied Data Science Capstone” course on Coursera.
+Neighborhood coordinates used to query the Foursquare API are sourced by querying Google’s Geocoding
+API.
+
+Processed Toronto neighborhood data used will be in the following format :
+		                      
+                     Neighborhood 	Neighborhood 	 	                        Venue 	    Venue
+  Neighborhood       Latitude       Longitude      Venue                    Latitude    Longitude
+
+0	Parkwoods	         43.753259	    -79.329656	   Brookbanks Park          43.751976	  -79.332140
+1	Parkwoods	         43.753259	    -79.329656	   Variety Store	          43.751974	  -79.333114
+2	Victoria Village   43.725882	    -79.315572	   Victoria Village Arena	  43.723481	  -79.315635
+3	Victoria Village   43.725882	    -79.315572	   Portugril	              43.725819	  -79.312785
+4	Victoria Village   43.725882	    -79.315572	   Tim Hortons	            43.725517	  -79.313103
+
+where the data sources for the entries are as follows:
+1) Neighborhood:             Scraped from Wikipedia page
+2) Neighborhood Latitude:    Google’s Geocoding API, based on Neighborhood 
+3) Neighborhood Longitude:   Google’s Geocoding API, based on Neighborhood
+4) Venue:                    Foursquare API, providing venues close to neighborhood coordinates
+5) Venue Latitude:           Foursquare API, latitude for venue
+6) Venue Longitude:          Foursquare API, longitude for venue
+          
